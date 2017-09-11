@@ -16,8 +16,8 @@ abstract class Action
     protected function render($action, $layout = true)
     {
         $this->action = $action;
-        if($layout && file_exists("../app/Views/layout.phtml")){
-            include_once "../app/Views/layout.phtml";
+        if($layout && file_exists("app/Views/layout.phtml")){
+            include_once "app/Views/layout.phtml";
         }else{
             $this->content();
         }
@@ -26,6 +26,6 @@ abstract class Action
     protected function content(){
         $current = get_class($this);
         $singleClassName = strtolower((str_replace("Controller","",str_replace("MaxBusiness\\Controllers\\","",$current))));
-        include_once "../app/Views/".$singleClassName."/".$this->action.".phtml";
+        include_once "app/Views/".$singleClassName."/".$this->action.".phtml";
     }
 }

@@ -2,7 +2,7 @@
 
 namespace MaxBusiness;
 
-require "../vendor/autoload.php"; 
+require "vendor/autoload.php"; 
 
 use MaxBusiness\Route;
 
