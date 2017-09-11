@@ -20,10 +20,12 @@ abstract class Router
         $array_url[1] = empty($array_url[1]) ? "index" : $array_url[1];
         $array_url[2] = empty($array_url[2]) ? "index" : $array_url[2];
 
+        var_dump($array_url);
+
         $class = "MaxBusiness\\Controllers\\".ucfirst($array_url[1])."Controller";
         $controller = new $class;
 
-        $action = $array_url[2]/
+        $action = $array_url[2]
         $controller->$action();
 
         // array_walk($this->routes, function($route) use ($url) {
