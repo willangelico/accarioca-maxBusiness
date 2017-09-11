@@ -15,16 +15,26 @@ abstract class Router
     abstract protected function initRoutes();
     
     protected function run($url)
-    {  
-       array_walk($this->routes, function($route) use ($url) {
-          echo $url;
-           if($url == $route['routes']){
-               $class       = "MaxBusiness\\Controllers\\".ucfirst($route['controller']);
-               $controller  = new $class;
-               $action      = $route['action'];
-               $controller->$action();
-           }
-       });
+    {         
+        $array_url = explode("/",$url);
+        $array_url[1] = empty($array_url[1]) ? "index" : $array_url[1];
+        $array_url[2] = empty($array_url[2]) ? "index" : $array_url[2];
+
+        $class = "MaxBusiness\\Controllers\\".ucfirst($array_url[1])."Controller";
+        $controller = new $class;
+
+        $action = $array_url[2]/
+        $controller->$action();
+
+        // array_walk($this->routes, function($route) use ($url) {
+          
+        //    if($url == $route['routes']){
+        //        $class       = "MaxBusiness\\Controllers\\".ucfirst($route['controller']);
+        //        $controller  = new $class;
+        //        $action      = $route['action'];
+        //        $controller->$action();
+        //    }
+        // });
     }
     
     protected function setRoutes(array $routes)
