@@ -17,7 +17,7 @@ abstract class Router
     protected function run($url)
     {  
        array_walk($this->routes, function($route) use ($url) {
-            
+          echo $url;
            if($url == $route['routes']){
                $class       = "MaxBusiness\\Controllers\\".ucfirst($route['controller']);
                $controller  = new $class;
