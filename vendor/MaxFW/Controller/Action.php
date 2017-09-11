@@ -27,6 +27,10 @@ abstract class Action
         $current = get_class($this);
         var_dump($current);
         $singleClassName = strtolower((str_replace("Controller","",str_replace("MaxBusiness\\Controllers\\","",$current))));
+        if(!empty($folder)){
+            $singleClassName = strtolower((str_replace("Controller","",str_replace("MaxBusiness\\".$forder."\\Controllers\\","",$current))));    
+        }
+
         include_once "app".$folder."/Views/".$singleClassName."/".$this->action.".phtml";
     }
 }
