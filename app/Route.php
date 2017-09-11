@@ -22,6 +22,6 @@ class Route extends Router
 		// );
 		//$this->setRoutes($routes);
 
-    	$this->setRoutes();
+    	//$this->setRoutes();
 	}
 }
