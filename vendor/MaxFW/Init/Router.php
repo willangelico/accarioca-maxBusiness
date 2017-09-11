@@ -25,7 +25,7 @@ abstract class Router
         $class = "MaxBusiness\\Controllers\\".ucfirst($array_url[1])."Controller";
         $controller = new $class;
 
-        $action = $array_url[2]
+        $action = $array_url[2];
         $controller->$action();
 
         // array_walk($this->routes, function($route) use ($url) {
