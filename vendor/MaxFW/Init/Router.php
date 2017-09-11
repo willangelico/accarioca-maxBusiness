@@ -20,7 +20,18 @@ abstract class Router
         $array_url[1] = empty($array_url[1]) ? "index" : $array_url[1];
         $array_url[2] = empty($array_url[2]) ? "index" : $array_url[2];
 
-        var_dump($array_url);
+        array_walk($this->routes, function($route) use ($array_url) {
+          
+           if($array_url[1] == $route['routes']){
+              $array_url[3] = empty($array_url[3]) ? "index" : $array_url[3];
+               $class       = "MaxBusiness\\".$route['folder']."\\Controllers\\".ucfirst($array_url[2]);
+               $controller  = new $class;
+               $action      = $array_url[3];
+               $controller->$action();
+               die();
+           }
+        });
+        
 
         $class = "MaxBusiness\\Controllers\\".ucfirst($array_url[1])."Controller";
         $controller = new $class;
@@ -28,15 +39,7 @@ abstract class Router
         $action = $array_url[2];
         $controller->$action();
 
-        // array_walk($this->routes, function($route) use ($url) {
-          
-        //    if($url == $route['routes']){
-        //        $class       = "MaxBusiness\\Controllers\\".ucfirst($route['controller']);
-        //        $controller  = new $class;
-        //        $action      = $route['action'];
-        //        $controller->$action();
-        //    }
-        // });
+       
     }
     
     protected function setRoutes(array $routes)

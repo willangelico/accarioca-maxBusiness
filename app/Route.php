@@ -9,19 +9,19 @@ class Route extends Router
     
     protected function initRoutes(){
 
-		// $routes['home'] = array(
-		//     'routes' => '/', 
-		//     'controller' =>'indexController', 
-		//     'action' => 'index'
-		// );
+		$routes['admin'] = array(
+		    'routes' 	=> '/admin', 
+		    'auth'		=>'true', 
+		    'folder' 	=> 'Admin'
+		);
 		
 		// $routes['contact'] = array(
 		//     'routes' => '/contact', 
 		//     'controller' =>'indexController', 
 		//     'action' => 'contact'
 		// );
-		//$this->setRoutes($routes);
+		$this->setRoutes($routes);
 
-    	//$this->setRoutes();
+
 	}
 }
