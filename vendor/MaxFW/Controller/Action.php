@@ -26,7 +26,8 @@ abstract class Action
     protected function content($folder = ""){
         $current = get_class($this);
         var_dump($current);
-        
+        echo "<br>";
+        var_dump($folder);
         if(!empty($folder)){
             $singleClassName = strtolower((str_replace("Controller","",str_replace("MaxBusiness\\".$forder."\\Controllers\\","",$current))));    
         }else{
