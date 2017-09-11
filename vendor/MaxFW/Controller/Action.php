@@ -28,8 +28,9 @@ abstract class Action
         var_dump($current);
         echo "<br>";
         var_dump($folder);
+        
         if(!empty($folder)){
-            $singleClassName = strtolower((str_replace("Controller","",str_replace("MaxBusiness\\".$forder."\\Controllers\\","",$current))));    
+            $singleClassName = strtolower((str_replace("Controller","",str_replace("MaxBusiness\\".ltrim($folder, "Hdle");."\\Controllers\\","",$current))));    
         }else{
             $singleClassName = strtolower((str_replace("Controller","",str_replace("MaxBusiness\\Controllers\\","",$current))));    
         }
