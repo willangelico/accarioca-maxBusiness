@@ -13,19 +13,19 @@ abstract class Action
         $this->view = new \stdClass;
     }
     
-    protected function render($action, $layout = true)
+    protected function render($action, $layout = true, $folder = "")
     {
         $this->action = $action;
-        if($layout && file_exists("app/Views/layout.phtml")){
-            include_once "app/Views/layout.phtml";
+        if($layout && file_exists("app".$folder."/Views/layout.phtml")){
+            include_once "app".$folder."/Views/layout.phtml";
         }else{
             $this->content();
         }
     }
     
-    protected function content(){
+    protected function content($folder = ""){
         $current = get_class($this);
         $singleClassName = strtolower((str_replace("Controller","",str_replace("MaxBusiness\\Controllers\\","",$current))));
-        include_once "app/Views/".$singleClassName."/".$this->action.".phtml";
+        include_once "app".$folder."/Views/".$singleClassName."/".$this->action.".phtml";
     }
 }
