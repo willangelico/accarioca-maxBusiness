@@ -21,7 +21,7 @@ class IndexController extends Action
     
     public function index()
     {
-        $this->render("index",true, "/admin");
+        $this->render("index",true, "/Admin");
     }
            
 }
