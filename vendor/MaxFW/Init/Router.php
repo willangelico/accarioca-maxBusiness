@@ -25,7 +25,7 @@ abstract class Router
           var_dump($route);
            if($array_url[1] == $route['routes']){
               $array_url[3] = empty($array_url[3]) ? "index" : $array_url[3];
-               $class       = "MaxBusiness\\".$route['folder']."\\Controllers\\".ucfirst($array_url[2]);
+               $class       = "MaxBusiness\\".$route['folder']."\\Controllers\\".ucfirst($array_url[2])."Controller";
                $controller  = new $class;
                $action      = $array_url[3];
                $controller->$action();
