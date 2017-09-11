@@ -19,7 +19,7 @@ abstract class Action
         if($layout && file_exists("app".$folder."/Views/layout.phtml")){
             include_once "app".$folder."/Views/layout.phtml";
         }else{
-            $this->content();
+            $this->content($folder);
         }
     }
     
