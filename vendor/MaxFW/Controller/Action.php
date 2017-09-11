@@ -26,7 +26,7 @@ abstract class Action
     protected function content($folder = ""){
         $current = get_class($this);
         var_dump($current);
-        echo "<br>";
+        echo "<br>"."MaxBusiness\\".ltrim($folder, "/")."\\Controllers\\";
         var_dump($folder);
 
         if(!empty($folder)){
