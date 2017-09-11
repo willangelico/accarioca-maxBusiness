@@ -10,7 +10,7 @@ class Route extends Router
     protected function initRoutes(){
 
 		$routes['admin'] = array(
-		    'routes' 	=> '/admin', 
+		    'routes' 	=> 'admin', 
 		    'auth'		=>'true', 
 		    'folder' 	=> 'Admin'
 		);
