@@ -31,7 +31,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <p class="text-muted text-right maxwill">Desenvolvido por:
-                            <a href="www.maxwill.com.br" target="_blank">
+                            <a href="http://www.maxwill.com.br" target="_blank">
                                 <img src="<?=HOME_URI;?>public/images/maxwill.png" class="img-responsive pull-right">
                             </a>
                         </p>
@@ -39,10 +39,7 @@
                 </div>
             </div>
         </footer>
-        <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script src="/public/scripts/script.js"></script>
         <!-- INSERIR GOOGLE ANALYTICS -->
         <!-- INSERIR GOOGLE TAGMANAGER -->
