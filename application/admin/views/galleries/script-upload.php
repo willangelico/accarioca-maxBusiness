@@ -65,7 +65,7 @@
                              picBox.append('<input type="hidden" name="img_src[]" value="' +response.file+ '" />');
                           } else {
                             if (response.msg)  {
-                              errBox.innerHTML = response.msg;
+                              errBox.innerHTML = 'teste'+response.msg;
                             } else {
                               errBox.innerHTML = 'Erro ao fazer o upload';
                             }
