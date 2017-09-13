@@ -1,0 +1,153 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
+
+
+body {
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+}
+
+
+.on{ color: #1EA176;}
+
+.off{ color: #B82428;}
+
+nav.navbar.navbar-default.navbar-fixed-top {
+  background: rgba(0, 0, 0, 0) url(../../images/bg.jpg) repeat;
+  z-index: 30000;
+   
+}
+
+.content-header > h1 {
+  font-size: 24px;
+ 
+}
+
+.sub-header h2{
+  font-size: 18px;
+}
+.search{
+  margin-top: 20px;
+}
+
+.content-header > .breadcrumb {
+  background: transparent none repeat scroll 0 0;
+  border-radius: 2px;
+  float: right;
+  font-size: 12px;
+  margin-bottom: 0;
+  margin-top: 60px;
+  padding: 7px 5px;
+  position: absolute;
+  right: 10px;
+  top: 15px;
+}
+
+.sidebar {
+  background: #222d32 none repeat scroll 0 0;
+  border: 1px solid #000;
+  height: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  position: fixed;
+  z-index: 20000;
+}
+.sidebar ul:first-child{
+  margin-top: 51px;
+}
+
+.sidebar > ul > li > a{
+  color: #b8c7ce;
+  border-left: 3px solid  #222d32;
+  padding-left: 15px;
+}
+
+.sidebar > ul > li > a:hover, .sidebar > ul > li > a:focus{
+  background: #1E282C;
+  color: #FFF;
+  border-left: 3px solid  #3C8DBC;
+  
+}
+
+.sidebar > ul > li > a > .fa, .sidebar > ul > li > a > .glyphicon, .sidebar > ul > li > a > .ion {
+  width: 20px;
+}
+
+
+.main-content {
+  padding-top: 50px;
+   background: #F8F8F8;
+   height: 100%;
+}
+
+.main-content .box{
+  background: #FFF;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-top: 3px solid  #3C8DBC;
+}
+
+.btn-save {
+  background: #f8f8f8 none repeat scroll 0 0;
+  bottom: 0;
+  padding: 10px 30px;
+  position: fixed;
+  right: 0;
+  width: 100%;
+  z-index: 10000;
+}
+
+
+
+
+.login-body{background: rgba(0, 0, 0, 0) url("../../images/bg.jpg") repeat scroll 0 0;}
+.login-body .logo{ margin: 10px auto; text-align: center;}
+
+.login-box {
+  margin: 5% auto;
+  max-width: 360px;
+}
+.signin-box {
+  background: #fff none repeat scroll 0 0;
+  border-top: 0 none;
+  color: #666;
+  padding: 20px;
+}
+.signin-box p{ text-align: center; margin-bottom: 20px;}
+.form-control {
+  border-color: #d2d6de;
+  border-radius: 0 !important;
+  box-shadow: none;
+}
+.icheck > label {
+  padding-left: 0;
+}
+
+.galleries_photos{
+  clear: both;
+  padding-top: 30px;
+  display: inline;
+}
+
+.galleries_photos li{
+  list-style: none;
+}
+.galleries_photos li a img.photos{
+
+
+}
+
+.fancybox-lock .fancybox-overlay {
+  z-index: 50000 !important;
+}
+
+
+body.dragging, body.dragging * {
+  cursor: move !important;
+}
+
+.dragged {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 900000;
+}
+
