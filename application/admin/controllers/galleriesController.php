@@ -194,15 +194,16 @@ class galleriesController extends mainController
     	require(ABSPATH.'/public/plugins/Simple-Ajax-Uploader-master/extras/Uploader.php');
 		$uploader = new FileUpload('uploadfile');
 		$upload_dir = ABSPATH.'/public/files/images/galerias/';
+		echo $upload_dir;
     	$allowedExtensions = array('png', 'jpg', 'gif');
 		$result = $uploader->handleUpload($upload_dir,$allowedExtensions);
 
 		require(ABSPATH.'/public/plugins/Simple-Ajax-Uploader-master/extras/canvas.php');
-		$mini = new canvas();
-		$targ_w = 384;	$targ_h = 216;	$jpeg_quality = 100;
-		$mini->carrega( $upload_dir.$uploader->getFileName() )->hexa( '#FFFFFF' )->grava($upload_dir.$uploader->getFileName());
-		$mini->carrega( $upload_dir.$uploader->getFileName() )->hexa( '#FFFFFF' )->redimensiona( $targ_w,'' , 'preenchimento' )->grava( $upload_dir.'mini/'.$uploader->getFileName() );
-		$mini->carrega( $upload_dir.'mini/'.$uploader->getFileName() )->hexa( '#FFFFFF' )->posicaoCrop(0,0)->redimensiona( $targ_w,$targ_h , 'crop' )->grava( $upload_dir.'mini/'.$uploader->getFileName() );
+		// $mini = new canvas();
+		// $targ_w = 384;	$targ_h = 216;	$jpeg_quality = 100;
+		// $mini->carrega( $upload_dir.$uploader->getFileName() )->hexa( '#FFFFFF' )->grava($upload_dir.$uploader->getFileName());
+		// $mini->carrega( $upload_dir.$uploader->getFileName() )->hexa( '#FFFFFF' )->redimensiona( $targ_w,'' , 'preenchimento' )->grava( $upload_dir.'mini/'.$uploader->getFileName() );
+		// $mini->carrega( $upload_dir.'mini/'.$uploader->getFileName() )->hexa( '#FFFFFF' )->posicaoCrop(0,0)->redimensiona( $targ_w,$targ_h , 'crop' )->grava( $upload_dir.'mini/'.$uploader->getFileName() );
 		
 		if (!$result) {
 			exit(json_encode(array('success' => false, 'msg' => $uploader->getErrorMsg())));  
