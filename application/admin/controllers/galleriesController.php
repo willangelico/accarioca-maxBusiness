@@ -191,7 +191,10 @@ class galleriesController extends mainController
 
 
     public function uploadfotos(){
-    	
+
+    	echo json_encode(array('success' => true, 'file' => "teste"));
+		exit;
+
     	require(ABSPATH.'/public/plugins/Simple-Ajax-Uploader-master/extras/Uploader.php');
 		$uploader = new FileUpload('uploadfile');
 		$upload_dir = ABSPATH.'/public/files/images/galerias/';
