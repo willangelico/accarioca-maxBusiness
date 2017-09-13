@@ -28,13 +28,7 @@
 					}
 				?>
 				<form action="<?=$adm_uri;?><?=chk_array( $modelo->form_data, 'id_config')?>" method="post" enctype="multipart/form-data">
-					<div class="col-xs-12 col-md-3 pull-right"> 
-				        <div class="form-group">
-				            <label for="meta_tags">Palavras-chaves</label>
-				            <input type="text" name="meta_tags" class="form-control" id="meta_tags" placeholder="Insira as palavras-chaves" value="<?php 
-								echo htmlentities( chk_array( $modelo->form_data, 'meta_tags'), ENT_QUOTES, 'UTF-8' );
-							?>" />
-				        </div>
+					<div class="col-xs-12 col-md-3 pull-right"> 				        
 				        <div class="form-group">
 				            <label for="meta_description">Descrição</label>
 				            <input type="text" name="meta_description" class="form-control" id="meta_description" placeholder="Insira a descrição da página" value="<?php 
@@ -67,25 +61,7 @@
 				            <input type="text" name="email_contato" class="form-control" id="email_contato" placeholder="Insira o e-mail de contato" value="<?php 
 								echo htmlentities( chk_array( $modelo->form_data, 'email_contato') , ENT_QUOTES, 'UTF-8' );
 							?>" />
-				        </div>
-				        <div class="form-group">
-				            <label for="facebook">Facebook</label>
-				            <input type="text" name="facebook" class="form-control" id="facebook" placeholder="Insira a Url do facebook" value="<?php 
-								echo htmlentities( chk_array( $modelo->form_data, 'facebook') , ENT_QUOTES, 'UTF-8');
-							?>" />
-				        </div> 
-				        <div class="form-group">
-				            <label for="youtube">Youtube</label>
-				            <input type="text" name="youtube" class="form-control" id="youtube" placeholder="Insira a Url do youtube" value="<?php 
-								echo htmlentities( chk_array( $modelo->form_data, 'youtube') , ENT_QUOTES, 'UTF-8' );
-							?>" />
-				        </div> 
-				        <div class="form-group">
-				            <label for="twitter">Twitter</label>
-				            <input type="text" name="twitter" class="form-control" id="twitter" placeholder="Insira a Url do twitter" value="<?php 
-								echo htmlentities( chk_array( $modelo->form_data, 'twitter'), ENT_QUOTES, 'UTF-8' );
-							?>" />
-				        </div> 
+				        </div>				        
 				        <input type="hidden" name="add" value="1" />
 				        <div class="btn-save"><button type="submit" class="btn btn-primary pull-right">Salvar</button></div>
 				    </div>

@@ -39,8 +39,11 @@
                 </div>
             </div>
         </footer>
-        <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>  
-        <script src="/assets/js/script.min.js"></script>
+        <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+        <script src="/public/scripts/script.js"></script>
         <!-- INSERIR GOOGLE ANALYTICS -->
         <!-- INSERIR GOOGLE TAGMANAGER -->
     </body>

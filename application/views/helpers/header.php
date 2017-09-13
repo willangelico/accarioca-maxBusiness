@@ -13,7 +13,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
         <!-- Custom Styles -->  
-        <link rel="stylesheet" href="/assets/css/style.min.css"> 
+        <link rel="stylesheet" href="/public/styles/style.css"> 
     </head>
     <body id="home">
         <!--[if lt IE 8]>
