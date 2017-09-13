@@ -12,7 +12,7 @@ class servicosController extends mainController
 		$modelo = $this->load_model('front/frontModel');		
 		$this->title = $modelo->config['titulo'];
 		$this->description = $modelo->config['meta_description'];
-        $this->page = 'servicos';
+        $this->page = 'works';
 
 		$parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
 

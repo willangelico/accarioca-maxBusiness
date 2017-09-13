@@ -10,7 +10,7 @@ class contatoController extends mainController
 		$modelo = $this->load_model('front/frontModel');		
 		$this->title = $modelo->config['titulo'];
 		$this->description = $modelo->config['meta_description'];
-        $this->page = 'contato';
+        $this->page = 'contact';
 
 		$parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
 
