@@ -6,7 +6,7 @@
                         <p>Além de oferecer o material completo para a realização de festas de <strong>Casamento</strong>, <strong>Formaturas</strong>, <strong>Batizados</strong>, etc, a <strong>AC Carioca</strong> oferece também serviços de:</p>
                     </div>
                     <div col-md-12>
-                        <img src="assets/img/servicos-banner.jpg" alt="Serviços e Materias para festas" />
+                        <img src="/public/images/servicos-banner.jpg" alt="Serviços e Materias para festas" />
                     </div>                                       
 				</div>
                 <div class="row">

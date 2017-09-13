@@ -8950,7 +8950,7 @@ nav {
       #contact main div.row .decoracoes i,
       #contact main div.row .garcons i,
       #contact main div.row .churrasqueiro i {
-        background: url(assets/img/servicos-icon.png); }
+        background: url(/public/images/servicos-icon.png); }
       #works main div.row .decoracoes .desc,
       #works main div.row .garcons .desc,
       #works main div.row .churrasqueiro .desc,
