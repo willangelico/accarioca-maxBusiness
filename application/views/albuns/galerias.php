@@ -4,7 +4,7 @@
                     <div class="col-md-12">
                         <div class="page-header">
                             <h1><a href="<?=HOME_URI;?><?=seo($lista['categoria']['titulo']);?>-<?=$lista['categoria']['id_galerias_categorias']?>"><?=$lista['categoria']['titulo'];?></a>
-                                <small> / <a href="<?=HOME_URI;?>album">álbuns</a></small>
+                                <small> / <a href="<?=HOME_URI;?>album">materiais</a></small>
                             </h1>
                         </div>
                     </div>
