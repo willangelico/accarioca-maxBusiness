@@ -158,11 +158,11 @@ class categoriesModel extends mainModel
 		);
 		
 		// Verifica se o mimetype enviado é permitido
-		if ( ! in_array( $tipo_imagem, $permitir_tipos ) ) {
-			// Retorna uma mensagem
-			$this->form_msg = '<div class="alert alert-danger" role="alert">Você deve enviar uma imagem.</div>';
-			return;
-		}
+		// if ( ! in_array( $tipo_imagem, $permitir_tipos ) ) {
+		// 	// Retorna uma mensagem
+		// 	$this->form_msg = '<div class="alert alert-danger" role="alert">Você deve enviar uma imagem.</div>';
+		// 	return;
+		// }
 		
 		// Tenta mover o arquivo enviado
 		if ( ! move_uploaded_file( $tmp_imagem, UP_ABSPATH . '/images/galerias/' . $nome_imagem ) ) {
