@@ -26,7 +26,7 @@ class categoriesModel extends mainModel
 			$query_limit = " LIMIT $offset,$posts_por_pagina ";
 		}
 		$query = $this->db->query(
-			'SELECT * FROM galerias_categorias ' . $where . ' ORDER BY ordem  ASC, id_galerias_categorias DESC' . $query_limit,
+			'SELECT * FROM galerias_categorias ' . $where . ' ORDER BY titulo ASC, id_galerias_categorias DESC' . $query_limit,
 			$id
 		);
 		return $query->fetchAll();

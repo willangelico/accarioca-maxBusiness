@@ -63,7 +63,7 @@ class frontModel extends mainModel
 	public function categorias(){
 		$id = $where = $query_limit = null;
 		$query = $this->db->query(
-			'SELECT * FROM galerias_categorias WHERE status = ? ORDER BY ordem  ASC, id_galerias_categorias DESC' . $query_limit,
+			'SELECT * FROM galerias_categorias WHERE status = ? ORDER BY titulo ASC, id_galerias_categorias DESC' . $query_limit,
 			array( 1 )
 		);
 		return $query->fetchAll();
