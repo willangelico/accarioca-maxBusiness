@@ -21,7 +21,7 @@
                     <li><a href="/orcamento" <?=($this->page=='orcamento') ? 'class="active"' : '';?>>Orçamento</a></li>
                     <li><a href="/contato" <?=($this->page=='contato') ? 'class="active"' : '';?>>Contato</a></li>
                 </ul>
-                <form action="/materiais" method="get" class="form-inline" id="form-search">
+               <!--  <form action="/materiais" method="get" class="form-inline" id="form-search">
                     <fieldset class="form-group">
                         <label class="sr-only" for="search-ipt">O que você está procurando?</label>
                         <div class="input-group">
@@ -29,6 +29,6 @@
                         </div>
                         <button class="btn" type="submit"><i class="fa fa-search fa-2" aria-hidden="true"></i></button>
                     </fieldset>
-                </form>                             
+                </form>   -->                           
             </nav>
         </header>
