@@ -14,7 +14,7 @@
             <div class="container">
                 <div class="row">
                     <?Php foreach($categorias as $c){ ?>
-                        <div class="col-md-6">
+                        <div class="col-md-3">
     						<a class="gal_item" title="<?=$c['titulo'];?>" href="<?=HOME_URI;?><?=seo($c['titulo']);?>-<?=$c['id_galerias_categorias']?>">
     							<img title="<?=$c['titulo'];?>" alt="<?=$c['titulo'];?>" src="<?=HOME_URI;?>public/files/images/galerias/mini/<?=$c['url_img']?>?<?=rand(0,99);?>">
     							<div class="gal_caption"><?=$c['titulo'];?></div>
