@@ -7,7 +7,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
 					</button>
-                    <a class="navbar-brand" href="<?=HOME_URI;?>admin"><img src="<?=HOME_URI;?>public/images/logo.png" height=20 alt="Área administrativa" /></a>
+                    <a class="navbar-brand" href="<?=HOME_URI;?>admin"><img src="<?=HOME_URI;?>public/images/logo.jpg" height=20 alt="Área administrativa" /></a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">

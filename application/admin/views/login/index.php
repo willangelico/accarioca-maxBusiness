@@ -1,6 +1,6 @@
 	<div class="login-box">
 		<div class="logo">
-			<a href=<?=HOME_URI;?> target="_blank" class="login"><img src="<?=HOME_URI;?>public/images/logo.png" /></a>
+			<a href=<?=HOME_URI;?> target="_blank" class="login"><img src="<?=HOME_URI;?>public/images/logo.jpg" /></a>
 		</div>
 		<div class="signin-box">
 			<p>Área administrativa</p>
