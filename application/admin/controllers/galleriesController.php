@@ -8,13 +8,13 @@ class galleriesController extends mainController
 	public $permission_required;
 
 	public function __construct(){
-		parent::__construct();
-		if ( ! $this->logged_in ) {
-			$this->logout();
-			$this->goto_login();
-			return;
-		}
-		$this->parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
+		// parent::__construct();
+		// if ( ! $this->logged_in ) {
+		// 	$this->logout();
+		// 	$this->goto_login();
+		// 	return;
+		// }
+		// $this->parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
 	}
 
     public function index() {
