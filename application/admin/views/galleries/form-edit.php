@@ -6,12 +6,12 @@
 ?>
 <div class="col-md-offset-2 col-md-10 main-content">
 	<section class="content-header">
-		<h1>Galerias <small>Nova galeria</small></h1>
+		<h1>Materiais <small>Novo material</small></h1>
 		<?php
 			$breadcrumb = new breadcrumb;
 			$breadcrumb->setWay(array("name"=>"Home", "icon"=>"fa fa-dashboard", "a"=>HOME_URI."admin"));
-			$breadcrumb->setWay(array("name"=>"Galerias", "a"=>HOME_URI."admin/galleries","icon"=>"fa fa-file-image-o"));
-			$breadcrumb->setWay(array("name"=>"Cadastro de galeria","li"=>"active"));
+			$breadcrumb->setWay(array("name"=>"Materiais", "a"=>HOME_URI."admin/galleries","icon"=>"fa fa-file-image-o"));
+			$breadcrumb->setWay(array("name"=>"Cadastro de materiais","li"=>"active"));
 			$breadcrumb->getWay();
 		?>	
 	</section>
@@ -21,11 +21,11 @@
 				<nav class="navbar sub-header">
 					<form class="navbar-form" method="post" action="<?=$adm_uri;?>search">
 						<div class="pull-left">
-							<h2>Cadastro de nova galeria</h2>
+							<h2>Cadastro de novo material</h2>
 						</div>
 						<div class="pull-right search">
-							<a href="<?=$adm_uri;?>" class="btn btn-primary">Lista de galerias</a>
-							<a href="<?=HOME_URI;?>admin/gallery/add/" class="btn btn-primary">Nova galeria</a>
+							<a href="<?=$adm_uri;?>" class="btn btn-primary">Lista de materiais</a>
+							<a href="<?=HOME_URI;?>admin/gallery/add/" class="btn btn-primary">Novo material</a>
 						</div>					
 					</form>	
 				</nav>

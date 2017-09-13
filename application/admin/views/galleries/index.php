@@ -6,11 +6,11 @@
 ?>
 <div class="col-md-offset-2 col-md-10 main-content">
 	<section class="content-header">
-		<h1>Galerias <small>Lista de galerias</small></h1>
+		<h1>Materiais <small>Lista de materiais</small></h1>
 		<?php
 			$breadcrumb = new breadcrumb;
 			$breadcrumb->setWay(array("name"=>"Home", "icon"=>"fa fa-dashboard", "a"=>HOME_URI."admin"));
-			$breadcrumb->setWay(array("name"=>"Galerias", "li"=>"active"));
+			$breadcrumb->setWay(array("name"=>"Materiais", "li"=>"active"));
 			$breadcrumb->getWay();
 		?>		
 	</section>
@@ -20,11 +20,11 @@
 				<nav class="navbar sub-header">
 					<form class="navbar-form" method="post" action="<?=$adm_uri;?>search">
 						<div class="pull-left">
-							<h2>Lista de galerias</h2>
+							<h2>Lista de materiais</h2>
 						</div>
 						<div class="pull-right search">
 							<?php require ABSPATH . APPLICATION .'/admin/views/helpers/search.php';?>
-							<a href="<?=HOME_URI;?>admin/galleries/add/" class="btn btn-primary">Nova galeria</a>
+							<a href="<?=HOME_URI;?>admin/galleries/add/" class="btn btn-primary">Novo material</a>
 							<a href="<?=HOME_URI;?>admin/galleries/categories/" class="btn btn-primary">Categorias</a>
 						</div>					
 					</form>	

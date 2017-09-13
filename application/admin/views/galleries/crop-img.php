@@ -5,13 +5,13 @@
 ?>
 <div class="col-md-offset-2 col-md-10 main-content">
 	<section class="content-header">
-		<h1>Editar Imagem <small>Recorte de imagem para o galeria</small></h1>
+		<h1>Editar Imagem <small>Recorte de imagem para o material</small></h1>
 		<?php
 			$breadcrumb = new breadcrumb;
 
 			$breadcrumb->setWay(array("name"=>"Home", "icon"=>"fa fa-dashboard", "a"=>HOME_URI."admin"));
-			$breadcrumb->setWay(array("name"=>"Galerias", "a"=>HOME_URI."admin/galleries","icon"=>"fa fa-file-image-o"));
-			$breadcrumb->setWay(array("name"=>"Cadastro de galeria","a"=>$edit_uri.chk_array( $modelo->form_data, 'id_galerias')));
+			$breadcrumb->setWay(array("name"=>"Materiais", "a"=>HOME_URI."admin/galleries","icon"=>"fa fa-file-image-o"));
+			$breadcrumb->setWay(array("name"=>"Cadastro de materiais","a"=>$edit_uri.chk_array( $modelo->form_data, 'id_galerias')));
 			$breadcrumb->setWay(array("name"=>"Edição de imagem", "li"=>"active"));
 			$breadcrumb->getWay();
 		?>					

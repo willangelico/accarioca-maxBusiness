@@ -6,11 +6,11 @@
 ?>
 <div class="col-md-offset-2 col-md-10 main-content">
 	<section class="content-header">
-		<h1>Categorias <small>Lista de categorias de galerias</small></h1>
+		<h1>Categorias <small>Lista de categorias dos materiais</small></h1>
 		<?php
 			$breadcrumb = new breadcrumb;
 			$breadcrumb->setWay(array("name"=>"Home", "icon"=>"fa fa-dashboard", "a"=>HOME_URI."admin"));
-			$breadcrumb->setWay(array("name"=>"Galerias", "a"=>HOME_URI."admin/galleries","icon"=>"fa fa-file-image-o"));
+			$breadcrumb->setWay(array("name"=>"Materiais", "a"=>HOME_URI."admin/galleries","icon"=>"fa fa-file-image-o"));
 			$breadcrumb->setWay(array("name"=>"Categorias", "li"=>"active"));
 			$breadcrumb->getWay();
 		?>
@@ -25,7 +25,7 @@
 						</div>
 						<div class="pull-right search">
 							<?php require ABSPATH . APPLICATION .'/admin/views/helpers/search.php';?>
-							<a href="<?=HOME_URI;?>admin/galleries/" class="btn btn-primary">Galerias</a>
+							<a href="<?=HOME_URI;?>admin/galleries/" class="btn btn-primary">Materiais</a>
 							<a href="<?=HOME_URI;?>admin/galleries/categoriesadd/" class="btn btn-primary">Nova categoria</a>
 						</div>					
 					</form>	

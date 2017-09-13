@@ -6,7 +6,7 @@
                         		<span>Dashboard</span>
                         	</a>
                         </li>                        
-                        <li>
+                       <!--  <li>
                         	<a href="<?=HOME_URI;?>admin/pages/edit/1">
                         		<i class="fa fa-files-o"></i>
                         		<span>Sobre mim</span>
@@ -17,11 +17,11 @@
                         		<i class="fa fa-picture-o "></i>
                         		<span>Banners</span>
                         	</a>
-                        </li>                        
+                        </li>     -->                    
                         <li>
                         	<a href="<?=HOME_URI;?>admin/galleries">
                         		<i class="fa fa-file-image-o"></i>
-                        		<span>Galerias</span>
+                        		<span>Materiais</span>
                         	</a>
                         </li>                        
                     </ul>
