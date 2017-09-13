@@ -1,6 +1,6 @@
 <?php
 
-class albumController extends mainController
+class materiaisController extends mainController
 {
 	
 
@@ -15,13 +15,8 @@ class albumController extends mainController
 
 
         if(!$this->parametros){
-			$this->title = "Álbuns - ".$modelo->config['titulo'];
+			$this->title = "Materiais - ".$modelo->config['titulo'];
 			$this->description = $modelo->config['meta_description'];
-			$this->keywords = $modelo->config['meta_tags'];	
-			$banners = $modelo->bannersAtivos();			
-			$this->meta_img = UP_ABSPATH.'/images/banners/mini/'.$banners[0]['url_img'];  
-
-			
 			$categorias = $modelo->categorias();
         	$this->require = ABSPATH .'/'. APPLICATION .'/views/index/albuns.php';
         }else{        	
@@ -32,10 +27,7 @@ class albumController extends mainController
 
 
 				$this->title = $lista['categoria']['titulo']." - ".$modelo->config['titulo'];
-				$this->description = $lista['categoria']['meta_description'];
-				$this->keywords = $lista['categoria']['meta_tags'];
-				$this->meta_img = UP_ABSPATH.'/images/galerias/mini/'.$lista['categoria']['url_img'];  
-
+				$this->description = $lista['categoria']['meta_description'];				
 
         		$this->require = ABSPATH .'/'. APPLICATION .'/views/albuns/galerias.php';
 			}else{
@@ -43,9 +35,6 @@ class albumController extends mainController
 
 				$this->title = $lista['galeria']['titulo']." - ".$modelo->config['titulo'];
 				$this->description = $lista['galeria']['meta_description'];
-				$this->keywords = $lista['galeria']['meta_tags'];
-				$this->meta_img = UP_ABSPATH.'/images/galerias/mini/'.$lista['fotos'][0]['url_img'];  
-
         		$this->require = ABSPATH .'/'. APPLICATION .'/views/albuns/fotos.php';
 			}
 		}
