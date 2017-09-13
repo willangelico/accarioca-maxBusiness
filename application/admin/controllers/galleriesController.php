@@ -194,11 +194,11 @@ class galleriesController extends mainController
     	require(ABSPATH.'/public/plugins/Simple-Ajax-Uploader-master/extras/Uploader.php');
 		$uploader = new FileUpload('uploadfile');
 		$upload_dir = ABSPATH.'/public/files/images/galerias/';
-		echo $upload_dir;
+		// echo $upload_dir;
     	$allowedExtensions = array('png', 'jpg', 'gif');
 		$result = $uploader->handleUpload($upload_dir,$allowedExtensions);
 
-		require(ABSPATH.'/public/plugins/Simple-Ajax-Uploader-master/extras/canvas.php');
+		// require(ABSPATH.'/public/plugins/Simple-Ajax-Uploader-master/extras/canvas.php');
 		// $mini = new canvas();
 		// $targ_w = 384;	$targ_h = 216;	$jpeg_quality = 100;
 		// $mini->carrega( $upload_dir.$uploader->getFileName() )->hexa( '#FFFFFF' )->grava($upload_dir.$uploader->getFileName());
