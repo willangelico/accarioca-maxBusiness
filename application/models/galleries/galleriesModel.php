@@ -136,52 +136,57 @@ class galleriesModel extends mainModel
 		if ( empty( $_FILES['url_img'] ) ) {
 			return;
 		}
-
-		foreach ($_FILES['url_img'] as $imagem) {
 		
 		// Configura os dados da imagem
-		//$imagem         = $_FILES['url_img'];
+		$imagem         = $_FILES['url_img'];
 		
 		// Nome e extensão
-			$nome_imagem    = strtolower( $imagem['name'] );
-			$ext_imagem     = explode( '.', $nome_imagem );
-			$ext_imagem     = end( $ext_imagem );
-			$nome_imagem    = preg_replace( '/[^a-zA-Z0-9]/', '', $nome_imagem);
-			$nome_imagem   .= '_' . mt_rand() . '.' . $ext_imagem;
-			
-			// Tipo, nome temporário, erro e tamanho
-			$tipo_imagem    = $imagem['type'];
-			$tmp_imagem     = $imagem['tmp_name'];
-			$erro_imagem    = $imagem['error'];
-			$tamanho_imagem = $imagem['size'];
-			
-			// Os mime types permitidos
-			$permitir_tipos  = array(
-				'image/bmp',
-				'image/x-windows-bmp',
-				'image/gif',
-				'image/jpeg',
-				'image/pjpeg',
-				'image/png',
-			);
-			
-			// Verifica se o mimetype enviado é permitido
-			if ( ! in_array( $tipo_imagem, $permitir_tipos ) ) {
-				// Retorna uma mensagem
-				$this->form_msg = '<div class="alert alert-danger" role="alert">Você deve enviar uma imagem.</div>';
-				return;
-			}
-			
-			// Tenta mover o arquivo enviado
-			if ( ! move_uploaded_file( $tmp_imagem, UP_ABSPATH . '/images/galerias/' . $nome_imagem ) ) {
-				// Retorna uma mensagem
-				$this->form_msg = '<div class="alert alert-danger" role="alert">Erro ao enviar imagem.</div>';
-				return;
-			}
-			$n[] = $nome_imagem;
+		$nome_imagem    = strtolower( $imagem['name'] );
+		$ext_imagem     = explode( '.', $nome_imagem );
+		$ext_imagem     = end( $ext_imagem );
+		$nome_imagem    = preg_replace( '/[^a-zA-Z0-9]/', '', $nome_imagem);
+		$nome_imagem   .= '_' . mt_rand() . '.' . $ext_imagem;
+		
+		// Tipo, nome temporário, erro e tamanho
+		$tipo_imagem    = $imagem['type'];
+		$tmp_imagem     = $imagem['tmp_name'];
+		$erro_imagem    = $imagem['error'];
+		$tamanho_imagem = $imagem['size'];
+		
+		// Os mime types permitidos
+		$permitir_tipos  = array(
+			'image/bmp',
+			'image/x-windows-bmp',
+			'image/gif',
+			'image/jpeg',
+			'image/pjpeg',
+			'image/png',
+		);
+		
+		// Verifica se o mimetype enviado é permitido
+		// if ( ! in_array( $tipo_imagem, $permitir_tipos ) ) {
+		// 	// Retorna uma mensagem
+		// 	$this->form_msg = '<div class="alert alert-danger" role="alert">Você deve enviar uma imagem.</div>';
+		// 	return;
+		// }
+		
+		// Tenta mover o arquivo enviado
+		if ( ! move_uploaded_file( $tmp_imagem, UP_ABSPATH . '/images/galerias/' . $nome_imagem ) ) {
+			// Retorna uma mensagem
+			$this->form_msg = '<div class="alert alert-danger" role="alert">Erro ao enviar imagem.</div>';
+			return;
 		}
+		$upload_dir = ABSPATH.'/public/files/images/galerias/';
+		require(ABSPATH.'/public/plugins/Simple-Ajax-Uploader-master/extras/canvas.php');		
+		$mini = new canvas();
+		$targ_w = 384;	$targ_h = 216;	$jpeg_quality = 100;
+		$mini->carrega( $upload_dir.$nome_imagem )->hexa( '#FFFFFF' )->grava($upload_dir.$nome_imagem );
+		$mini->carrega( $upload_dir.$nome_imagem )->hexa( '#FFFFFF' )->redimensiona( $targ_w,'' , 'preenchimento' )->grava( $upload_dir.'mini/'.$nome_imagem );
+		$mini->carrega( $upload_dir.'mini/'.$nome_imagem )->hexa( '#FFFFFF' )->posicaoCrop(0,0)->redimensiona( $targ_w,$targ_h , 'crop' )->grava( $upload_dir.'mini/'.$nome_imagem );
+
+		
 		// Retorna o nome da imagem
-		return $n;
+		return $nome_imagem;
 		
 	} // upload_imagem
 	
