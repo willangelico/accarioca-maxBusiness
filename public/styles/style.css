@@ -32,3 +32,16 @@ a.gal_item:hover .gal_caption {
 .page-header h1 a {
     color: inherit;
 }
+
+#works main div.row .decoracoes .desc, #works main div.row .garcons .desc, #works main div.row .churrasqueiro .desc, #products main div.row .decoracoes .desc, #products main div.row .garcons .desc, #products main div.row .churrasqueiro .desc, #budget main div.row .decoracoes .desc, #budget main div.row .garcons .desc, #budget main div.row .churrasqueiro .desc, #contact main div.row .decoracoes .desc, #contact main div.row .garcons .desc, #contact main div.row .churrasqueiro .desc {
+    display: block;
+    padding: 20px 40px;
+}
+
+#works main div.row p, #products main div.row p, #budget main div.row p, #contact main div.row p {
+    min-height: 100px;
+}
+
+#works main div.row .decoracoes, #works main div.row .garcons, #works main div.row .churrasqueiro, #products main div.row .decoracoes, #products main div.row .garcons, #products main div.row .churrasqueiro, #budget main div.row .decoracoes, #budget main div.row .garcons, #budget main div.row .churrasqueiro, #contact main div.row .decoracoes, #contact main div.row .garcons, #contact main div.row .churrasqueiro {
+    margin-top: 20px;
+}
