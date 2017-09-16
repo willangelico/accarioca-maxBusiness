@@ -191,9 +191,6 @@ class galleriesController extends mainController
 
 
     public function uploadfotos(){   	
-    	var_dump($_SERVER['REQUEST_URI']);
-
-    	echo ABSPATH.'/public/plugins/Simple-Ajax-Uploader-master/extras/cors.php';
 
 		require(ABSPATH.'/public/plugins/Simple-Ajax-Uploader-master/extras/cors.php');
     	require(ABSPATH.'/public/plugins/Simple-Ajax-Uploader-master/extras/Uploader.php');
