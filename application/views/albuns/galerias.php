@@ -17,10 +17,8 @@
                 <div class="row">
                     <?Php foreach($lista['galerias'] as $g){ ?>
                         <div class="col-md-4">
-    						<a href="<?=HOME_URI;?><?=seo($lista['categoria']['titulo']);?>/<?=seo($g['titulo']);?>-<?=$g['id_galerias'];?>" class="gal_item" title="<?=$g['titulo'];?>" >
-    							<img title="<?=$g['titulo'];?>" alt="<?=$g['titulo'];?>" src="<?=HOME_URI;?>public/files/images/galerias/mini/<?=$g['cover']?>?<?=rand(0,99);?>">
-    							<div class="gal_caption"><?=$g['titulo'];?></div>
-    							<span class="gal_magnify"></span>
+    						<img title="<?=$g['titulo'];?>" alt="<?=$g['titulo'];?>" src="<?=HOME_URI;?>public/files/images/galerias/mini/<?=$g['url_img']?>?<?=rand(0,99);?>">
+    						<div class="gal_caption"><?=$g['titulo'];?></div>    						
     						</a>
                         </div>
                     <?Php }?>
