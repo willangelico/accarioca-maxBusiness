@@ -37,13 +37,10 @@ class galleriesModel extends mainModel
 	}
 	
 	public function obtem_gallery () {
-		if ( isset($this->acao) ) {
 			$query = $this->db->query(
 					'SELECT * FROM galerias_categorias'
 			);
 			$this->form_data['galerias_categorias'] = $query->fetchAll();
-			return;
-		}
 		if( empty($this->id) ){			
 			if ( ! is_numeric( chk_array( $this->parametros, 0 ) ) ) {
 				return;
