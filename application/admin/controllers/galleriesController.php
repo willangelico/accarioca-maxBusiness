@@ -190,30 +190,27 @@ class galleriesController extends mainController
     }    
 
 
-    public function uploadfotos(){
-    	// echo ABSPATH;
-    	echo json_encode(array('success' => true, 'file' => "teste"));
-		exit;
+    public function uploadfotos(){   	
+		require(ABSPATH.'/public/plugins/Simple-Ajax-Uploader-master/extras/cors.php');
+    	require(ABSPATH.'/public/plugins/Simple-Ajax-Uploader-master/extras/Uploader.php');
+		$uploader = new FileUpload('uploadfile');
+		$upload_dir = ABSPATH.'/public/files/images/galerias/';
+    	$allowedExtensions = array('png', 'jpg', 'gif');
+		$result = $uploader->handleUpload($upload_dir,$allowedExtensions);
 
-  //   	require(ABSPATH.'/public/plugins/Simple-Ajax-Uploader-master/extras/Uploader.php');
-		// $uploader = new FileUpload('uploadfile');
-		// $upload_dir = ABSPATH.'/public/files/images/galerias/';
-  //   	$allowedExtensions = array('png', 'jpg', 'gif');
-		// $result = $uploader->handleUpload($upload_dir,$allowedExtensions);
-
-		// require(ABSPATH.'/public/plugins/Simple-Ajax-Uploader-master/extras/canvas.php');
-		// $mini = new canvas();
-		// $targ_w = 384;	$targ_h = 216;	$jpeg_quality = 100;
-		// $mini->carrega( $upload_dir.$uploader->getFileName() )->hexa( '#FFFFFF' )->grava($upload_dir.$uploader->getFileName());
-		// $mini->carrega( $upload_dir.$uploader->getFileName() )->hexa( '#FFFFFF' )->redimensiona( $targ_w,'' , 'preenchimento' )->grava( $upload_dir.'mini/'.$uploader->getFileName() );
-		// $mini->carrega( $upload_dir.'mini/'.$uploader->getFileName() )->hexa( '#FFFFFF' )->posicaoCrop(0,0)->redimensiona( $targ_w,$targ_h , 'crop' )->grava( $upload_dir.'mini/'.$uploader->getFileName() );
+		require(ABSPATH.'/public/plugins/Simple-Ajax-Uploader-master/extras/canvas.php');
+		$mini = new canvas();
+		$targ_w = 384;	$targ_h = 216;	$jpeg_quality = 100;
+		$mini->carrega( $upload_dir.$uploader->getFileName() )->hexa( '#FFFFFF' )->grava($upload_dir.$uploader->getFileName());
+		$mini->carrega( $upload_dir.$uploader->getFileName() )->hexa( '#FFFFFF' )->redimensiona( $targ_w,'' , 'preenchimento' )->grava( $upload_dir.'mini/'.$uploader->getFileName() );
+		$mini->carrega( $upload_dir.'mini/'.$uploader->getFileName() )->hexa( '#FFFFFF' )->posicaoCrop(0,0)->redimensiona( $targ_w,$targ_h , 'crop' )->grava( $upload_dir.'mini/'.$uploader->getFileName() );
 		
-		// if (!$result) {
-		// 	exit(json_encode(array('success' => false, 'msg' => $uploader->getErrorMsg())));  
-		// }
+		if (!$result) {
+			exit echo $upload->corsResponse( (json_encode(array('success' => false, 'msg' => $uploader->getErrorMsg()))));
+		}
 
-		// echo json_encode(array('success' => true, 'file' => $uploader->getFileName()));
-		// exit;
+		echo $upload->corsResponse(json_encode(array('success' => true, 'file' => $uploader->getFileName())));
+		exit;
     }
 
     public function removeImg(){
