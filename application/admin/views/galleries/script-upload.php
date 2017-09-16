@@ -24,6 +24,7 @@
                       focusClass: 'active',
                       disabledClass: 'disabled',
                       responseType: 'json',
+                      debug: true,
                       onSubmit: function(filename, ext) {            
                          var prog = document.createElement('div'),
                              outer = document.createElement('div'),
