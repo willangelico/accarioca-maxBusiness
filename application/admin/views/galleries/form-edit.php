@@ -65,13 +65,12 @@
 							?>" />
 				        </div>
 				        <div class="form-group">
-				        	<label>Adicionar Fotos</label>	
-							<input type="button" id="upload-btn" class="form-control btn btn-large clearfix" value="Escolha as fotos">
-	          				<span style="padding-left:5px;vertical-align:middle;"><i>PNG, JPG, or GIF (5MB max file size)</i></span>
-	          			</div>
-						<div id="errormsg" class="clearfix redtext" style="padding-top: 5px;"></div>	              
-						<div id="pic-progress-wrap" class="progress-wrap" style="margin-top:10px;margin-bottom:10px;"></div>								
-						<div id="picbox" class="clear" style="padding-top:0px;padding-bottom:10px;"><h3></h3><span></span><br /></div>
+					    	<label for="url_img">Imagem de destaque</label>
+					    	<input type="file" class="filestyle" placeholder="Insira uma imagem" name="url_img" id="url_img" data-buttonText="Localizar arquivo">
+					    	<?php if(chk_array($modelo->form_data,'url_img')){?>
+					    		<img src="<?=HOME_URI;?>public/files/images/galerias/mini/<?=chk_array($modelo->form_data,'url_img')?>" style="width: 100%;" />					
+					    	<?php }?> 
+					    </div>
 				    </div>
 				    <div class="col-xs-12 col-md-9">
 				        <div class="form-group">

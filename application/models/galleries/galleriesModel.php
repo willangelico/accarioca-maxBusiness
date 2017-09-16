@@ -55,41 +55,23 @@ class galleriesModel extends mainModel
 		if ( 'POST' == $_SERVER['REQUEST_METHOD'] && ! empty( $_POST['add'] ) ) {
 			unset($_POST['add']);
 
-			if(isset($_POST['img_src'])){
-				$img_src = $_POST['img_src'];
-				unset($_POST['img_src']);
-			}
+			 $imagem = $this->upload_imagem();
+			 if ( $imagem ) {
+				$_POST['url_img'] = $imagem;
+			 }
 			
-			$query = $this->db->update('galerias', 'id_galerias', $id_galerias, $_POST);			
+			$query = $this->db->update('galerias', 'id_galerias', $id_galerias, $_POST);
 			if ( $query ) {
-				if(isset($img_src)){
-					foreach ($img_src as $img) {
-						$dt['url_img'] = $img;
-						$dt['ordem'] = 0;
-						$dt['status'] = 1;
-						$dt['id_galerias'] = $id_galerias;
-						$queryFotos = $this->db->insert('galerias_fotos', $dt);
-						// retorno da query fotos
-					}
-				}
-				$this->form_msg = '<div class="alert alert-success" role="alert">Galerias atualizada com sucesso!</div>';
+				$this->form_msg = '<div class="alert alert-success" role="alert">Material atualizado com sucesso!</div>';
 			}
 		}
 		
 		$query = $this->db->query(
 			'SELECT * FROM galerias WHERE id_galerias = ? LIMIT 1',
-			array( $id_galerias )
+			array( $id_galerias_categorias )
 		);
-		$fetch_data = $query->fetch();
-		$query = $this->db->query(
-			'SELECT * FROM galerias_fotos WHERE id_galerias = ? order by ordem asc, id_galerias_fotos asc',
-			array( $id_galerias )
-		);
-		$fetch_data['fotos'] = $query->fetchAll();
-		$query = $this->db->query(
-			'SELECT * FROM galerias_categorias'
-		);
-		$fetch_data['galerias_categorias'] = $query->fetchAll();
+		$fetch_data = $query->fetch();	
+
 		if ( empty( $fetch_data ) ) {
 			return;
 		}	
@@ -108,33 +90,19 @@ class galleriesModel extends mainModel
 			return;
 		}
 			
-		//$imagem = $this->upload_imagem();
-		//if ( ! $imagem ) {
-			//return;		
-		//}
+		$imagem = $this->upload_imagem();
+		if ( ! $imagem ) {
+			return;		
+		}
 		
 		unset($_POST['add']);
-		if(isset($_POST['img_src'])){
-				$img_src = $_POST['img_src'];
-				unset($_POST['img_src']);
-			}
-		//$_POST['url_img'] = $imagem;
+		$_POST['url_img'] = $imagem;
 		
 				
 		$query = $this->db->insert( 'galerias', $_POST );
 		if ( $query ) {
-			$this->form_msg = '<div class="alert alert-success" role="alert">Galeria cadastrada com sucesso!</div>';		
+			$this->form_msg = '<div class="alert alert-success" role="alert">Material cadastrado com sucesso!</div>';		
 			$this->id = $this->db->last_id;	
-			if(isset($img_src)){
-				foreach ($img_src as $img) {
-					$dt['url_img'] = $img;
-					$dt['ordem'] = 0;
-					$dt['status'] = 1;
-					$dt['id_galerias'] = $this->id;
-					$queryFotos = $this->db->insert('galerias_fotos', $dt);
-					// retorno da query fotos
-				}
-			}			
 			return;
 		} 
 		$this->form_msg = '<div class="alert alert-danger" role="alert">Erro ao enviar dados!</div>';
@@ -158,10 +126,8 @@ class galleriesModel extends mainModel
 		
 		$id_galerias = (int)chk_array( $this->parametros, 0 );
 		$query = $this->db->delete( 'galerias', 'id_galerias', $id_galerias );
-		$query = $this->db->delete( 'galerias_fotos', 'id_galerias', $id_galerias );		
 		echo '<meta http-equiv="Refresh" content="0; url=' . HOME_URI . 'admin/galleries">';
-		echo '<script type="text/javascript">window.location.href = "' . HOME_URI . 'admin/galleries";</script>';
-		
+		echo '<script type="text/javascript">window.location.href = "' . HOME_URI . 'admin/galleries";</script>';		
 	}
 	
 	public function upload_imagem() {

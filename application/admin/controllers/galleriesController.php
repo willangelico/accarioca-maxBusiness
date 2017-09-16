@@ -73,7 +73,7 @@ class galleriesController extends mainController
 			echo '</div>';
 		echo '</div>';
 		require ABSPATH . APPLICATION .'/admin/views/helpers/footer.php';
-		require ABSPATH . APPLICATION .'/admin/views/galleries/script-upload.php';
+		// require ABSPATH . APPLICATION .'/admin/views/galleries/script-upload.php';
     }
 
     public function del(){
