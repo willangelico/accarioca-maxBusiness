@@ -191,6 +191,10 @@ class galleriesController extends mainController
 
 
     public function uploadfotos(){   	
+    	var_dump($_SERVER['REQUEST_URI']);
+
+    	echo ABSPATH.'/public/plugins/Simple-Ajax-Uploader-master/extras/cors.php';
+
 		require(ABSPATH.'/public/plugins/Simple-Ajax-Uploader-master/extras/cors.php');
     	require(ABSPATH.'/public/plugins/Simple-Ajax-Uploader-master/extras/Uploader.php');
 		$uploader = new FileUpload('uploadfile');
@@ -206,7 +210,8 @@ class galleriesController extends mainController
 		$mini->carrega( $upload_dir.'mini/'.$uploader->getFileName() )->hexa( '#FFFFFF' )->posicaoCrop(0,0)->redimensiona( $targ_w,$targ_h , 'crop' )->grava( $upload_dir.'mini/'.$uploader->getFileName() );
 		
 		if (!$result) {
-			exit echo $upload->corsResponse( (json_encode(array('success' => false, 'msg' => $uploader->getErrorMsg()))));
+			echo $upload->corsResponse( (json_encode(array('success' => false, 'msg' => $uploader->getErrorMsg()))));
+			exit;
 		}
 
 		echo $upload->corsResponse(json_encode(array('success' => true, 'file' => $uploader->getFileName())));
