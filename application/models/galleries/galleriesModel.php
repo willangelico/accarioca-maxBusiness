@@ -37,7 +37,7 @@ class galleriesModel extends mainModel
 	}
 	
 	public function obtem_gallery () {
-		if ( isset($this->acao) && $this->acao != 'edit' ) {
+		if ( isset($this->acao) ) {
 			$query = $this->db->query(
 					'SELECT * FROM galerias_categorias'
 			);
