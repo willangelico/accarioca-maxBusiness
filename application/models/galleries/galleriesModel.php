@@ -37,10 +37,13 @@ class galleriesModel extends mainModel
 	}
 	
 	public function obtem_gallery () {
+		if ( isset($this->acao) && $this->acao != 'edit' ) {
 			$query = $this->db->query(
 					'SELECT * FROM galerias_categorias'
 			);
 			$this->form_data['galerias_categorias'] = $query->fetchAll();
+			return;
+		}
 		if( empty($this->id) ){			
 			if ( ! is_numeric( chk_array( $this->parametros, 0 ) ) ) {
 				return;
@@ -73,7 +76,10 @@ class galleriesModel extends mainModel
 			return;
 		}	
 		$this->form_data = $fetch_data;
-		
+		$query = $this->db->query(
+					'SELECT * FROM galerias_categorias'
+			);
+			$this->form_data['galerias_categorias'] = $query->fetchAll();
 	} 
 
 	public function add() {
