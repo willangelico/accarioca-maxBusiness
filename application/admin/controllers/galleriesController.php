@@ -191,7 +191,7 @@ class galleriesController extends mainController
 
 
     public function uploadfotos(){
-
+    	echo ABSPATH;
     	echo json_encode(array('success' => true, 'file' => "teste"));
 		exit;
 
