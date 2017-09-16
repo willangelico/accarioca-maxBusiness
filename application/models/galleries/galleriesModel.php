@@ -68,7 +68,7 @@ class galleriesModel extends mainModel
 		
 		$query = $this->db->query(
 			'SELECT * FROM galerias WHERE id_galerias = ? LIMIT 1',
-			array( $id_galerias_categorias )
+			array( $id_galerias )
 		);
 		$fetch_data = $query->fetch();	
 
